@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../static/adminResources/image/favicon.ico">
+
+    <title>View Attendance</title>
+
+    <!-- Bootstrap 4.0-->
+    <link rel="stylesheet" href="../../static/adminResources/css/bootstrap.min.css">
+
+    <!-- Data Table-->
+    <link rel="stylesheet" type="text/css" href="../../static/adminResources/css/datatables.min.css"/>
+
+    <!-- Bootstrap extend-->
+    <link rel="stylesheet" href="../../static/adminResources/css/bootstrap-extend.css">
+
+    <!-- Theme style -->
+    <link rel="stylesheet" href="../../static/adminResources/css/master_style.css">
+
+    <!-- AIUI Admin skins -->
+    <link rel="stylesheet" href="../../static/adminResources/css/_all-skins.css">
+
+    <!-- DataTables Buttons CSS -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.1/css/buttons.bootstrap4.min.css">
+
+    <!-- HTML5 Shim and Respond.js for IE8 support -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body class="hold-transition skin-black light-sidebar sidebar-mini">
+<div class="wrapper">
+
+    {% include 'admin/header.html' %}
+    {% include 'admin/menu.html' %}
+
+    <div class="content-wrapper">
+        <div class="content-header d-none d-md-block">
+            <div class="d-flex align-items-center justify-content-between">
+                <div>
+                    <h3 class="page-title br-0">Attendance Data</h3>
+                </div>
+                <div>
+                    <a href="/admin/insert_attendance" class="btn btn-primary">Add Attendance</a>
+                </div>
+            </div>
+        </div>
+
+        <section class="content">
+            <div class="row">
+                <div class="col-12">
+                    <div class="box">
+                        <div class="box-body">
+                            <div class="table-responsive">
+                                <table id="example1" class="table table-bordered table-striped">
+                                    <thead>
+                                    <tr>
+                                        <th>Index No</th>
+                                        <th>Roll No</th>
+                                        <th>Student Name</th>
+                                        <th>Date</th>
+                                        <th>Course</th>
+                                        <th>Status</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for attendance in attendance_vo_list %}
+                                        <tr>
+                                            <td>{{ loop.index }}</td>
+                                            <td>{{ attendance.roll_no }}</td>
+                                            <td>{{ attendance.student_name }}</td>
+                                            <td>{{ attendance.date }}&nbsp;&nbsp; {{ attendance.time }}</td>
+                                            <td>{{ attendance.course_name }}</td>  <!-- Changed from course_id to course_name -->
+                                            <td>{{ attendance.status }}</td>
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    {% include 'admin/footer.html' %}
+</div>
+
+<!-- jQuery -->
+<script src="../../static/adminResources/js/jquery-3.3.1.min.js"></script>
+
+<!-- Bootstrap and plugins -->
+<script src="../../static/adminResources/js/popper.min.js"></script>
+<script src="../../static/adminResources/js/bootstrap.min.js"></script>
+<script src="../../static/adminResources/js/jquery.slimscroll.min.js"></script>
+<script src="../../static/adminResources/js/fastclick.js"></script>
+<script src="../../static/adminResources/js/jquery.sparkline.min.js"></script>
+<script src="../../static/adminResources/js/template.js"></script>
+
+<!-- DataTables core -->
+<script src="../../static/adminResources/js/datatables.min.js"></script>
+
+<!-- DataTables Buttons extension + PDF support -->
+<script src="https://cdn.datatables.net/buttons/2.4.1/js/dataTables.buttons.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.bootstrap4.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.html5.min.js"></script>
+
+<!-- DataTable Initialization with PDF button -->
+<script>
+    $(document).ready(function () {
+        $('#example1').DataTable({
+            dom: 'Bfrtip',
+            buttons: [
+                {
+                    extend: 'pdfHtml5',
+                    title: 'Attendance Report',
+                    exportOptions: {
+                        columns: [0, 1, 2, 3, 4, 5] // only export visible columns
+                    },
+                    orientation: 'landscape',
+                    pageSize: 'A4'
+                }
+            ]
+        });
+    });
+</script>
+
+</body>
+</html>

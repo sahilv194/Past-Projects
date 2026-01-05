@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Admin Time Table View">
+    <meta name="author" content="">
+    <link rel="icon" href="../../static/adminResources/image/favicon.ico">
+
+    <title>Timetable Data</title>
+
+    <!-- Bootstrap 4.0-->
+    <link rel="stylesheet" href="../../static/adminResources/css/bootstrap.min.css">
+    <!-- DataTable -->
+    <link rel="stylesheet" href="../../static/adminResources/css/datatables.min.css">
+    <!-- Bootstrap Extend -->
+    <link rel="stylesheet" href="../../static/adminResources/css/bootstrap-extend.css">
+    <!-- Theme Style -->
+    <link rel="stylesheet" href="../../static/adminResources/css/master_style.css">
+    <!-- Skins -->
+    <link rel="stylesheet" href="../../static/adminResources/css/_all-skins.css">
+
+    <style>
+        .page-title {
+            font-weight: 700;
+        }
+
+        .box {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.05);
+            margin-top: 20px;
+        }
+
+        .table th,
+        .table td {
+            vertical-align: middle !important;
+        }
+
+        .table thead th {
+            background-color: #f4f6f9;
+            font-weight: 600;
+        }
+
+        .action-icons a {
+            margin: 0 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .fa-edit {
+            color: #007bff;
+        }
+
+        .fa-trash-o {
+            color: #dc3545;
+        }
+
+        .action-icons a:hover {
+            opacity: 0.7;
+        }
+
+        .table-striped tbody tr:nth-of-type(odd) {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+
+<body class="hold-transition skin-black light-sidebar sidebar-mini">
+<div class="wrapper">
+
+    {% include 'admin/header.html' %}
+    {% include 'admin/menu.html' %}
+
+    <!-- Content Wrapper -->
+    <div class="content-wrapper">
+        <!-- Header -->
+        <div class="content-header d-none d-md-block">
+            <div class="d-flex align-items-center">
+                <div class="mr-auto">
+                    <h3 class="page-title br-0">Timetable Data</h3>
+                </div>
+                <div>
+                    <a href="/admin/load_time_table" class="btn btn-primary">Add Timetable</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <section class="content">
+            <div class="row">
+                <div class="col-12">
+                    {% with messages = get_flashed_messages(with_categories=true) %}
+                        {% if messages %}
+                            {% for category, message in messages %}
+                                <div class="alert alert-{{ category }} alert-dismissible">
+                                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                                    {{ message }}
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+
+                    <div class="box">
+                        <div class="box-body">
+                            <div class="table-responsive">
+                                <table id="example1" class="table table-bordered table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Date</th>
+                                            <th>Day</th>
+                                            <th>Start Time</th>
+                                            <th>End Time</th>
+                                            <th>Subject</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for timetable in timetable_vo_list %}
+                                            <tr>
+                                                <td>{{ timetable.date.strftime('%Y-%m-%d') if timetable.date else '' }}</td>
+                                                <td>{{ timetable.day_of_week }}</td>
+                                                <td>{{ timetable.start_time.strftime('%H:%M') if timetable.start_time else '' }}</td>
+                                                <td>{{ timetable.end_time.strftime('%H:%M') if timetable.end_time else '' }}</td>
+                                                <td>{{ timetable.subject_name }}</td>
+                                                <td class="action-icons">
+                                                    <a href="/admin/edit_timetable?timetableId={{ timetable.timetable_id }}"
+                                                       class="fa fa-edit" data-toggle="tooltip" title="Edit"></a>
+                                                    <a href="/admin/delete_timetable?timetableId={{ timetable.timetable_id }}"
+                                                       class="fa fa-trash-o" data-toggle="tooltip" title="Delete"
+                                                       onclick="return confirm('Are you sure you want to delete this timetable entry?')"></a>
+                                                </td>
+                                            </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    {% include 'admin/footer.html' %}
+</div>
+
+<!-- Scripts -->
+<script src="../../static/adminResources/js/jquery-3.3.1.min.js"></script>
+<script src="../../static/adminResources/js/popper.min.js"></script>
+<script src="../../static/adminResources/js/bootstrap.min.js"></script>
+<script src="../../static/adminResources/js/jquery.slimscroll.min.js"></script>
+<script src="../../static/adminResources/js/fastclick.js"></script>
+<script src="../../static/adminResources/js/jquery.sparkline.min.js"></script>
+<script src="../../static/adminResources/js/template.js"></script>
+<script src="../../static/adminResources/js/datatables.min.js"></script>
+<script src="../../static/adminResources/js/data-table.js"></script>
+
+<!-- Tooltip Activation -->
+<script>
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+</script>
+
+</body>
+</html>

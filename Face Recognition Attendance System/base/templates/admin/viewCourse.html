@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="AIUI Admin - Course Table">
+    <meta name="author" content="">
+    <link rel="icon" href="../../static/adminResources/image/favicon.ico">
+
+    <title> Course Data Table</title>
+
+    <!-- Bootstrap 4.0-->
+    <link rel="stylesheet" href="../../static/adminResources/css/bootstrap.min.css">
+
+    <!-- DataTable -->
+    <link rel="stylesheet" type="text/css" href="../../static/adminResources/css/datatables.min.css"/>
+
+    <!-- Bootstrap extend-->
+    <link rel="stylesheet" href="../../static/adminResources/css/bootstrap-extend.css">
+
+    <!-- Theme style -->
+    <link rel="stylesheet" href="../../static/adminResources/css/master_style.css">
+
+    <!-- AIUI Admin skins -->
+    <link rel="stylesheet" href="../../static/adminResources/css/_all-skins.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Custom Style -->
+    <style>
+        .page-title {
+            font-weight: 700;
+        }
+
+        .card-table {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.05);
+            padding: 25px;
+        }
+
+        .table thead th {
+            background-color: #f7f7f7;
+            font-weight: 600;
+        }
+
+        .table td, .table th {
+            vertical-align: middle !important;
+        }
+
+        .action-btns a {
+            font-size: 16px;
+            margin-right: 12px;
+        }
+
+        .action-btns a.edit {
+            color: #007bff;
+        }
+
+        .action-btns a.delete {
+            color: #dc3545;
+        }
+
+        .table td {
+            word-break: break-word;
+        }
+    </style>
+</head>
+
+<body class="hold-transition skin-black light-sidebar sidebar-mini">
+<div class="wrapper">
+
+    {% include 'admin/header.html' %}
+    {% include 'admin/menu.html' %}
+
+    <!-- Content Wrapper -->
+    <div class="content-wrapper">
+        <!-- Page Header -->
+        <div class="content-header d-none d-md-block">
+            <div class="d-flex align-items-center">
+                <div class="mr-auto">
+                    <h3 class="page-title br-0">Course Data</h3>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main content -->
+        <section class="content">
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <div class="card-table">
+                        <div class="table-responsive">
+                            <table id="example1" class="table table-bordered table-hover">
+                                <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Course Name</th>
+                                    <th>Course Description</th>
+                                    <th>Action</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for course in course_vo_list %}
+                                    <tr>
+                                        <td>{{ loop.index }}</td>
+                                        <td><span class="badge badge-primary p-2">{{ course.course_name }}</span></td>
+                                        <td>{{ course.course_description }}</td>
+                                        <td class="action-btns">
+                                            <a href="/admin/edit_course?courseId={{ course.course_id }}" class="edit" title="Edit">
+                                                <i class="fa fa-edit"></i>
+                                            </a>
+                                            <a href="/admin/delete_course?courseId={{ course.course_id }}" class="delete" title="Delete" onclick="return confirm('Are you sure you want to delete this course?');">
+                                                <i class="fa fa-trash-alt"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+{#                                <tfoot>#}
+{#                                <tr>#}
+{#                                    <th>#</th>#}
+{#                                    <th>Course Name</th>#}
+{#                                    <th>Course Description</th>#}
+{#                                    <th>Action</th>#}
+{#                                </tr>#}
+{#                                </tfoot>#}
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    {% include 'admin/footer.html' %}
+</div>
+
+<!-- Scripts -->
+<script src="../../static/adminResources/js/jquery-3.3.1.min.js"></script>
+<script src="../../static/adminResources/js/popper.min.js"></script>
+<script src="../../static/adminResources/js/bootstrap.min.js"></script>
+<script src="../../static/adminResources/js/jquery.slimscroll.min.js"></script>
+<script src="../../static/adminResources/js/fastclick.js"></script>
+<script src="../../static/adminResources/js/jquery.sparkline.min.js"></script>
+<script src="../../static/adminResources/js/template.js"></script>
+
+<!-- DataTable Scripts -->
+<script src="../../static/adminResources/js/datatables.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#example1').DataTable({
+            responsive: true,
+            autoWidth: false,
+            lengthChange: true,
+            pageLength: 10
+        });
+    });
+</script>
+
+</body>
+</html>

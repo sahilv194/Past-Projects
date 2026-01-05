@@ -1,0 +1,20 @@
+<svg width="200" height="60" viewBox="0 0 200 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .text { font-family: 'Segoe UI', sans-serif; font-size: 20px; fill: #333; font-weight: bold; }
+    .highlight { fill: #4CAF50; }
+    .clock { fill: none; stroke: #4CAF50; stroke-width: 2; }
+    .check { stroke: #4CAF50; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+  </style>
+
+  <!-- Clock Circle -->
+  <circle class="clock" cx="30" cy="30" r="18"/>
+  <!-- Clock Hands -->
+  <line class="clock" x1="30" y1="30" x2="30" y2="18"/>
+  <line class="clock" x1="30" y1="30" x2="40" y2="30"/>
+
+  <!-- Checkmark -->
+  <polyline class="check" points="22,30 28,36 38,24"/>
+
+  <!-- Text -->
+  <text class="text" x="60" y="36">Smart <tspan class="highlight">Attendance</tspan></text>
+</svg>

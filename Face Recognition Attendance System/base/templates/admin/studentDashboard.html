@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Student Dashboard</title>
+    <!-- Bootstrap 4.0-->
+    <link rel="stylesheet" href="../../static/adminResources/css/bootstrap.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="../../static/adminResources/css/master_style.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body {
+            background-color: #f5f7fa;
+        }
+        .dashboard-header {
+            background: linear-gradient(45deg, #3498db, #2ecc71);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        .dashboard-card {
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+            border: none;
+        }
+        .action-btn {
+            border-radius: 30px;
+            padding: 12px;
+            font-weight: bold;
+            width: 100%;
+            margin-bottom: 15px;
+        }
+        .btn-timetable {
+            background: linear-gradient(45deg, #f39c12, #e74c3c);
+            color: white;
+        }
+        .btn-attendance {
+            background: linear-gradient(45deg, #2ecc71, #3498db);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container py-5">
+        <div class="dashboard-header text-center">
+            <h2><i class="fas fa-user-graduate mr-2"></i>Student Dashboard</h2>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card dashboard-card">
+                    <div class="card-body">
+                        <h4><i class="fas fa-calendar-alt mr-2"></i>Time Table</h4>
+                        <p>View your class schedule and timetable</p>
+                        <a href="/student/time_table" class="btn action-btn btn-timetable">
+                            <i class="fas fa-eye mr-2"></i>View Time Table
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card dashboard-card">
+                    <div class="card-body">
+                        <h4><i class="fas fa-user-check mr-2"></i>Attendance</h4>
+                        <p>Mark your attendance using face recognition</p>
+                        <a href="/admin/insert_attendance" class="btn action-btn btn-attendance">
+                            <i class="fas fa-camera mr-2"></i>Add Attendance
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-4">
+            <a href="/" class="btn btn-secondary">
+                <i class="fas fa-sign-out-alt mr-2"></i>Back to Login
+            </a>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../../static/adminResources/js/jquery-3.3.1.min.js"></script>
+    <script src="../../static/adminResources/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Edit Timetable">
+    <meta name="author" content="">
+    <link rel="icon" href="../../static/adminResources/image/favicon.ico">
+
+    <title>Edit Timetable</title>
+
+    <!-- Bootstrap 4.0-->
+    <link rel="stylesheet" href="../../static/adminResources/css/bootstrap.min.css">
+    <!-- Bootstrap Extend -->
+    <link rel="stylesheet" href="../../static/adminResources/css/bootstrap-extend.css">
+    <!-- Theme Style -->
+    <link rel="stylesheet" href="../../static/adminResources/css/master_style.css">
+    <!-- Skins -->
+    <link rel="stylesheet" href="../../static/adminResources/css/_all-skins.css">
+
+    <style>
+        .page-title {
+            font-weight: 700;
+        }
+
+        .box {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.05);
+            margin-top: 20px;
+        }
+
+        .form-group label {
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body class="hold-transition skin-black light-sidebar sidebar-mini">
+<div class="wrapper">
+
+    {% include 'admin/header.html' %}
+    {% include 'admin/menu.html' %}
+
+    <!-- Content Wrapper -->
+    <div class="content-wrapper">
+        <!-- Header -->
+        <div class="content-header d-none d-md-block">
+            <div class="d-flex align-items-center">
+                <div class="mr-auto">
+                    <h3 class="page-title br-0">Edit Timetable</h3>
+                </div>
+                <div>
+                    <a href="/admin/view_time_table" class="btn btn-secondary">Back to List</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <section class="content">
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    {% with messages = get_flashed_messages(with_categories=true) %}
+                        {% if messages %}
+                            {% for category, message in messages %}
+                                <div class="alert alert-{{ category }} alert-dismissible">
+                                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                                    {{ message }}
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+
+                    <div class="box">
+                        <div class="box-body">
+                            <form method="POST" action="/admin/update_timetable">
+                                <input type="hidden" name="timetableId" value="{{ timetable_vo.timetable_id }}">
+
+                                <div class="form-group">
+                                    <label for="date">Date</label>
+                                    <input type="date" class="form-control" id="date" name="date"
+                                           value="{{ timetable_vo.date.strftime('%Y-%m-%d') if timetable_vo.date else '' }}" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="day_of_week">Day of Week</label>
+                                    <select class="form-control" id="day_of_week" name="day_of_week" required>
+                                        <option value="Monday" {% if timetable_vo.day_of_week == 'Monday' %}selected{% endif %}>Monday</option>
+                                        <option value="Tuesday" {% if timetable_vo.day_of_week == 'Tuesday' %}selected{% endif %}>Tuesday</option>
+                                        <option value="Wednesday" {% if timetable_vo.day_of_week == 'Wednesday' %}selected{% endif %}>Wednesday</option>
+                                        <option value="Thursday" {% if timetable_vo.day_of_week == 'Thursday' %}selected{% endif %}>Thursday</option>
+                                        <option value="Friday" {% if timetable_vo.day_of_week == 'Friday' %}selected{% endif %}>Friday</option>
+                                        <option value="Saturday" {% if timetable_vo.day_of_week == 'Saturday' %}selected{% endif %}>Saturday</option>
+                                        <option value="Sunday" {% if timetable_vo.day_of_week == 'Sunday' %}selected{% endif %}>Sunday</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="start_time">Start Time</label>
+                                    <input type="time" class="form-control" id="start_time" name="start_time"
+                                           value="{{ timetable_vo.start_time.strftime('%H:%M') if timetable_vo.start_time else '' }}" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="end_time">End Time</label>
+                                    <input type="time" class="form-control" id="end_time" name="end_time"
+                                           value="{{ timetable_vo.end_time.strftime('%H:%M') if timetable_vo.end_time else '' }}" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="subject_name">Subject Name</label>
+                                    <input type="text" class="form-control" id="subject_name" name="subject_name"
+                                           value="{{ timetable_vo.subject_name }}" required>
+                                </div>
+
+                                <button type="submit" class="btn btn-primary">Update</button>
+                                <a href="/admin/view_time_table" class="btn btn-secondary">Cancel</a>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    {% include 'admin/footer.html' %}
+</div>
+
+<!-- Scripts -->
+<script src="../../static/adminResources/js/jquery-3.3.1.min.js"></script>
+<script src="../../static/adminResources/js/popper.min.js"></script>
+<script src="../../static/adminResources/js/bootstrap.min.js"></script>
+<script src="../../static/adminResources/js/template.js"></script>
+
+</body>
+</html>

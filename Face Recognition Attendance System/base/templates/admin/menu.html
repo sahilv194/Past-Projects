@@ -1,0 +1,81 @@
+<aside class="main-sidebar">
+    <section class="sidebar">
+        <div class="user-panel">
+            <div class="pull-left image">
+                <img src="../../static/adminResources/image/avatar.png" class="img-circle" alt="User Image">
+            </div>
+            <div class="pull-left info">
+                <p>Admin Panel</p>
+                <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+            </div>
+        </div>
+
+        <ul class="sidebar-menu" data-widget="tree">
+            <li class="header">MAIN NAVIGATION</li>
+
+            <li class="active">
+                <a href="/home">
+                    <i class="fas fa-home"></i> <span>Dashboard</span>
+                </a>
+            </li>
+
+            <li class="treeview">
+                <a href="#">
+                    <i class="fas fa-users"></i> <span>Student Management</span>
+                    <span class="pull-right-container">
+                        <i class="fas fa-angle-right pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="/admin/load_student"><i class="fas fa-user-plus"></i> Add Student</a></li>
+                    <li><a href="/admin/view_student"><i class="fas fa-list"></i> View Students</a></li>
+                </ul>
+            </li>
+
+            <li class="treeview">
+                <a href="#">
+                    <i class="fas fa-book"></i> <span>Course Management</span>
+                    <span class="pull-right-container">
+                        <i class="fas fa-angle-right pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="/admin/load_course"><i class="fas fa-plus-circle"></i> Add Course</a></li>
+                    <li><a href="/admin/view_course"><i class="fas fa-list-ul"></i> View Courses</a></li>
+                </ul>
+            </li>
+
+            <li class="treeview">
+                <a href="#">
+                    <i class="fas fa-calendar-alt"></i> <span>Timetable</span>
+                    <span class="pull-right-container">
+                        <i class="fas fa-angle-right pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="/admin/load_time_table"><i class="fas fa-plus"></i> Create Timetable</a></li>
+                    <li><a href="/admin/view_time_table"><i class="fas fa-table"></i> View Timetables</a></li>
+                </ul>
+            </li>
+
+            <li class="treeview">
+                <a href="#">
+                    <i class="fas fa-clipboard-check"></i> <span>Attendance</span>
+                    <span class="pull-right-container">
+                        <i class="fas fa-angle-right pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="/admin/view_attendance"><i class="fas fa-eye"></i> View Attendance</a></li>
+                    <li><a href="#"><i class="fas fa-chart-bar"></i> Attendance Reports</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="/admin/logout">
+                    <i class="fas fa-sign-out-alt"></i> <span>Logout</span>
+                </a>
+            </li>
+        </ul>
+    </section>
+</aside>

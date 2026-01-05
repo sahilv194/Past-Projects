@@ -1,0 +1,48 @@
+<header class="main-header">
+    <!-- Logo -->
+    <div class="logo-container">
+        <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+            <i class="fas fa-bars"></i>
+        </a>
+        <a href="/home" class="logo">
+            <span class="logo-lg">
+                <img src="../../static/adminResources/image/logo-light-text.png" alt="logo" class="light-logo">
+                <img src="../../static/adminResources/image/logo.jpg" alt="logo" class="dark-logo">
+            </span>
+        </a>
+    </div>
+
+    <!-- Header Navbar -->
+    <nav class="navbar navbar-static-top">
+        <div class="navbar-custom-menu">
+            <ul class="nav navbar-nav">
+                <!-- User Account -->
+                <li class="dropdown user user-menu">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <img src="../../static/adminResources/image/avatar.png" class="user-image" alt="User Image">
+                        <span class="hidden-xs">Admin</span>
+                    </a>
+                    <ul class="dropdown-menu scale-up">
+                        <li class="user-header">
+                            <img src="../../static/adminResources/image/avatar.png" class="img-circle" alt="User Image">
+                            <p>
+                                System Admin
+                                <small>Administrator</small>
+                            </p>
+                        </li>
+                        <li class="user-footer">
+                            <div class="pull-left">
+                                <a href="#" class="btn btn-default btn-flat">Profile</a>
+                            </div>
+                            <div class="pull-right">
+                                <a href="{{ url_for('admin_logout') }}" class="btn btn-default btn-flat">
+                                    <i class="fas fa-sign-out-alt"></i> Sign out
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
