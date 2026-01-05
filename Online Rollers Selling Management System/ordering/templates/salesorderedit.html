@@ -1,0 +1,73 @@
+{% extends 'main.html' %}
+{% block 'data' %}
+<section class="pcoded-main-container">
+    <div class="pcoded-content">
+        <!-- [ breadcrumb ] start -->
+        <div class="page-header">
+            <div class="page-block">
+                <div class="row align-items-center">
+                    <div class="col-md-12">
+                        <div class="page-header-title">
+                            <h5 class="m-b-10">Transactions Tables</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- [ breadcrumb ] end -->
+        <!-- [ Main Content ] start -->
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Sales Order Edit</h5>
+                    </div>
+                    <div class="card-body">
+                        <form action="/salesorderupdate/{{salesorder.so_id}}/" method="post">
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label class="floating-label" for="Email">Sales Order Id</label>
+                                        <input type="text" class="form-control" name="soid" id="Email" aria-describedby="emailHelp" value="{{salesorder.so_id}}" required>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label class="floating-label" for="Email">Customer Id</label>
+                                        <select class="form-control" name="cid">
+                                            {% for customer in customers %}
+                                            <option value="{{customer.cust_id}}">{{customer.customer_name}}</option>
+                                            {% endfor %}
+                                        </select><br>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label class="floating-label" for="Email">Sales Order Date</label>
+                                        <input type="text" class="form-control" name="sodate" id="Email" aria-describedby="emailHelp" value="{{salesorder.sale_date}}" required>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label class="floating-label" for="Email">Sales Order Total</label>
+                                        <input type="text" class="form-control" name="sototal" id="Email" aria-describedby="emailHelp" value="{{salesorder.total}}" required>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <button type="submit" class="btn  btn-primary">Update</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+

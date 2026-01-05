@@ -1,0 +1,16 @@
+<h1 align="center">States</h1>
+                            <table border="1" width="50%" align="center">
+                                <thead>
+                                    <tr>  
+                                        <th>State Id</th>
+                                        <th>State Name</th>  
+                                    </tr>
+                                    </thead>      
+                                        {% for state in states %}
+                                            <tr>
+                                                <td>{{state.state_id}}</td>
+                                                <td>{{state.state_name}}</td>
+                                        {% endfor%}
+                                    
+                                </tbody>
+                            </table>

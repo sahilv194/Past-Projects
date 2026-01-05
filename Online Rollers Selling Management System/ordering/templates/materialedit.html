@@ -1,0 +1,56 @@
+{% extends 'main.html' %}
+{% block 'data' %}
+<section class="pcoded-main-container">
+    <div class="pcoded-content">
+        <!-- [ breadcrumb ] start -->
+        <div class="page-header">
+            <div class="page-block">
+                <div class="row align-items-center">
+                    <div class="col-md-12">
+                        <div class="page-header-title">
+                            <h5 class="m-b-10">Master Tables</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- [ breadcrumb ] end -->
+        <!-- [ Main Content ] start -->
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Supplier Edit</h5>
+                    </div>
+                    <div class="card-body">
+                        <form action="/materialupdate/{{material.m_id}}/" method="post">
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label class="floating-label" for="Email">Material Id</label>
+                                        <input type="text" class="form-control" name="mid" id="Email" aria-describedby="emailHelp" value="{{material.m_id}}" required>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label class="floating-label" for="Email">Material Name</label>
+                                        <input type="text" class="form-control" name="mname" id="Email" aria-describedby="emailHelp" value="{{material.m_name}}" required>
+                                    </div>
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <button type="submit" class="btn  btn-primary">Update</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+

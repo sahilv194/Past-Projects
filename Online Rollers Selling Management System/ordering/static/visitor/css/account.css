@@ -1,0 +1,187 @@
+/*
+Template Name:Shopping store
+File: Layout CSS
+Author: Templates On Web
+Author URI: http://templateonweb.com/
+Licence: <a href="http://www.templateonweb.com/terms.php?v=content&contentid=152">Website Template Licence</a>
+*/
+/*********************account****************/
+.center_account{
+  padding-top:20px;
+  padding-bottom:20px;
+  }
+.center_product_1 h1 {
+    font-weight: bold;
+	margin-top:0;
+	margin-bottom:20px;
+}
+.center_account_1{
+ margin-top:20px;
+ }
+.center_account_1_left{
+  border:1px solid #f3f7c0;
+  padding:20px;
+  background: #f3f7c052;
+  }
+.center_account_1_left h3{
+  font-weight:bold;
+  border-bottom:1px solid #f3f7c0;
+  padding-bottom:10px;
+  margin-bottom:20px;
+  }
+.center_account_1_left p span{
+color:red;
+font-size:20px;
+  }
+.center_account_1_left .form-control{
+  margin-top:10px;
+  border-radius:0;
+  height:40px;
+  margin-bottom:15px;
+  border-color:#f3f7c0;
+  box-shadow:none;
+  }
+.center_account_1_left h5 {
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+/* footer social icons */
+ul.social-network {
+	list-style: none;
+	display: inline-block;
+	margin-left:0 !important;
+	padding: 0;
+}
+ul.social-network li {
+	display: inline-block;
+	margin: 0 5px;
+}
+
+
+/* footer social icons */
+.social-network a.icoRss:hover {
+	background-color: #F56505;
+}
+.social-network a.icoFacebook:hover {
+	background-color:#3B5998;
+}
+.social-network a.icoTwitter:hover {
+	background-color:#33ccff;
+}
+.social-network a.icoGoogle:hover {
+	background-color:#BD3518;
+}
+.social-network a.icoVimeo:hover {
+	background-color:#0590B8;
+}
+.social-network a.icoLinkedin:hover {
+	background-color:#007bb7;
+}
+.social-network a.icoRss:hover i, .social-network a.icoFacebook:hover i, .social-network a.icoTwitter:hover i,
+.social-network a.icoGoogle:hover i, .social-network a.icoVimeo:hover i, .social-network a.icoLinkedin:hover i {
+	color:#fff;
+}
+a.socialIcon:hover, .socialHoverClass {
+	color:#44BCDD;
+}
+
+.social-circle li a {
+	display:inline-block;
+	position:relative;
+	margin:0 auto 0 auto;
+	-moz-border-radius:50%;
+	-webkit-border-radius:50%;
+	border-radius:50%;
+	text-align:center;
+	width: 40px;
+	height: 40px;
+	font-size:16px;
+}
+.social-circle li i {
+	margin:0;
+	line-height:40px;
+	text-align: center;
+}
+
+.social-circle li a:hover i, .triggeredHover {
+	-moz-transform: rotate(360deg);
+	-webkit-transform: rotate(360deg);
+	-ms--transform: rotate(360deg);
+	transform: rotate(360deg);
+	-webkit-transition: all 0.2s;
+	-moz-transition: all 0.2s;
+	-o-transition: all 0.2s;
+	-ms-transition: all 0.2s;
+	transition: all 0.2s;
+}
+.social-circle i {
+	color: #fff;
+	-webkit-transition: all 0.8s;
+	-moz-transition: all 0.8s;
+	-o-transition: all 0.8s;
+	-ms-transition: all 0.8s;
+	transition: all 0.8s;
+}
+
+.center_account_1_left ul li a {
+ background-color: #5a5c3f;   
+}
+.center_account_1_left h4{
+  margin-top:10px;
+  }
+.center_account_1_left h4 label{
+ font-weight:100;
+ }
+.center_account_1_left .button{
+ padding:9px 20px 8px 20px; 
+ border:none;
+ font-size:16px;
+ background:#5a5c3f;
+ color:#fff;
+ margin-top:15px;
+  }
+.center_account_1_left .button:hover{
+  background:#ff5c00;
+  }
+.center_account_1_left h2{
+margin-top:20px;
+font-size:16px;
+  }
+.center_account_1_left h2 a{
+color:#ff5c00;
+  }
+.center_account_1_left h2 a:hover{
+background:none;
+color:#5a5c3f;
+  }
+.center_account_1_left ul li  {
+margin:0px 1px;
+}
+/*********************account_end****************/
+
+@media screen and (max-width : 767px){
+.center_account_1_left {
+text-align:center;
+margin-bottom:10px;
+  }
+
+.center_account_1_left ul li  {
+margin-bottom:5px!important;
+}
+
+}
+
+@media (min-width:768px) and (max-width:991px) {
+
+ }
+ @media (min-width:992px) and (max-width:1200px) {
+
+ }
+@media (min-width:1201px) and (max-width:1335px) {
+
+ }
+
+
+

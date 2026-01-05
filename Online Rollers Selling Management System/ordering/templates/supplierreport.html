@@ -1,0 +1,21 @@
+<h1 align="center">Supplier</h1>
+                            <table border="1" width="70%" align="center">
+    <thead>
+        <tr>  
+            <th>Supplier Id</th>
+            <th>Supplier Name</th>
+            <th>Address</th>
+            <th>Contact</th>
+            <th>Email Id</th>
+        </tr>
+        </thead>      
+            {% for supplier in suppliers %}
+                <tr>
+                    <td>{{supplier.supplier_id}}</td>
+                    <td>{{supplier.supplier_name}}</td>
+                    <td>{{supplier.supplier_address}}</td>
+                    <td>{{supplier.supplier_contact}}</td>
+                    <td>{{supplier.supplier_email_id}}</td>
+            {% endfor %}
+    </tbody>
+</table>

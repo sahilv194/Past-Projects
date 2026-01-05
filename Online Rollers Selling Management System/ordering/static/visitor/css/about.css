@@ -1,0 +1,126 @@
+/*
+Template Name:Shopping store
+File: Layout CSS
+Author: Templates On Web
+Author URI: http://templateonweb.com/
+Licence: <a href="http://www.templateonweb.com/terms.php?v=content&contentid=152">Website Template Licence</a>
+*/
+/*********************about****************/
+.center_about{
+  padding-top:20px;
+  padding-bottom:20px;
+  }
+.center_product_1 h1 {
+    font-weight: bold;
+	margin-top:0;
+	margin-bottom:20px;
+}
+.center_about_1{  
+margin-top:20px;
+ }
+.center_about_1_right h4{
+  font-weight:bold;
+font-size:24px;
+  }
+.center_about_1_right p{
+margin-top:15px;
+line-height:1.5em;
+font-size:15px;
+  }
+.center_about_2_inner h5{
+font-size:18px; 
+font-weight:bold;
+margin-top:20px; 
+  }
+.center_about_2_inner {
+border: 1px solid #f3f7c0;
+padding:10px;
+background: #f3f7c052; 
+  }
+.center_about_2_inner p{
+margin-top:10px; 
+font-size:14px; 
+  }
+.center_about_2{
+background:#f3f7c052;
+padding:30px; 
+margin:30px 15px 30px 15px;
+  }
+.center_about_3 h2{
+  font-weight:bold;
+  }
+.center_about_3 p{
+margin-top:10px;
+margin-bottom:20px;
+  }
+.center_about_4_inner h4{
+  margin-top:15px;
+  font-weight:bold;
+  }
+.center_about_4_inner h4 a{
+ color:#5a5c3f;
+ font-size:22px;
+  }
+.center_about_4_inner h4 a:hover{
+ color: #ff5c00;
+  }
+.center_about_4_inner h5{
+  margin-top:10px;
+  font-size:16px;
+  }
+.center_about_4_inner p{
+  margin-top:10px;
+font-size:14px;
+  }
+.center_about_4_inner{
+border: 1px solid #f3f7c0;
+padding:10px; 
+background: #f3f7c052; 
+ }
+.center_about_4_inner ul li a{
+background:#5a5c3f;
+  }
+/*********************about_end****************/
+
+@media screen and (max-width : 767px){
+.center_about_1_right {
+  text-align:center;
+  margin-top:10px;
+  }
+.center_about_1_right p{
+text-align:left;
+  }
+.center_about_2{
+  padding:15px;
+  }
+.center_about_2_inner {
+  margin-top:10px;
+  }
+.center_about_4_inner {
+margin-top:10px;  
+  }
+.center_about_2_inner  p{
+text-align:left; 
+ }
+.center_about_3  p{
+text-align:left; 
+ }
+}
+
+@media (min-width:768px) and (max-width:991px) {
+.center_about_1_right p{
+font-size:14px;  
+  }
+.center_about_2_inner p{
+ font-size:14px; 
+  }
+ }
+ @media (min-width:992px) and (max-width:1200px) {
+
+ }
+@media (min-width:1201px) and (max-width:1335px) {
+
+ }
+
+
+

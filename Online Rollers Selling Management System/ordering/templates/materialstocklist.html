@@ -1,0 +1,59 @@
+{% extends 'main.html' %}
+{% block 'data' %}
+<section class="pcoded-main-container">
+    <div class="pcoded-content">
+        <!-- [ breadcrumb ] start -->
+        <div class="page-header">
+            <div class="page-block">
+                <div class="row align-items-center">
+                    <div class="col-md-12">
+                        <div class="page-header-title">
+                            <h5 class="m-b-10">Master Tables</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- [ breadcrumb ] end -->
+        <!-- [ Main Content ] start -->
+        <div class="row">
+            <!-- [ basic-table ] start -->
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Material Stock Table</h5><a  href="/materialstockreport/">Report</a>
+                        <span class="d-block m-t-5"><a href="/materialstockadd/">Add</a>
+                        </span>
+                    </div>
+                    <div class="card-body table-border-style">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>  
+                                        <th>Stock Id</th>
+                                        <th>Product Name</th>
+                                        <th>Transaction Type</th>
+                                        <th>Transaction Date&Time</th>
+                                        <th>Opration</th>
+                                    </tr>
+                                    </thead>      
+                                        {% for materialstock in materialstocktables %}
+                                            <tr>
+                                                <td>{{materialstock.stock_id}}</td>
+                                                <td>{{materialstock.p.p_name}}</td>
+                                                <td>{{materialstock.transaction_type}}</td>
+                                                <td>{{materialstock.t_datetime}}</td><td><a href="/materialstockdelete/{{materialstock.stock_id}}"onclick="return confirm('Do you want to delete?');">Delete <a href="/materialstockedit/{{materialstock.stock_id}}">Edit</a></td></tr>
+                                        {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <!-- [ Main Content ] end -->
+    </div>
+</section>
+{% endblock %}
+

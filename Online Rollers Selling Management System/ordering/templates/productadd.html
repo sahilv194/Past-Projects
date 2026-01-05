@@ -1,0 +1,106 @@
+{% extends 'main.html' %}
+{% block 'data' %}
+<section class="pcoded-main-container">
+    <div class="pcoded-content">
+        <!-- [ breadcrumb ] start -->
+        <div class="page-header">
+            <div class="page-block">
+                <div class="row align-items-center">
+                    <div class="col-md-12">
+                        <div class="page-header-title">
+                            <h5 class="m-b-10">Master Tables</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- [ breadcrumb ] end -->
+        <!-- [ Main Content ] start -->
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Product Add</h5>
+                    </div>
+                    <div class="card-body">
+                        <form action="/productsave/" method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="row">
+                                <!-- <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label class="floating-label" for="Email">Product Id</label>
+                                        <input type="text" class="form-control" name="pid" id="Email" aria-describedby="emailHelp">
+                                    </div>
+                                </div> -->
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label class="floating-label" for="Email">Product Name</label>
+                                        <input type="text" class="form-control" name="pname" id="Email" aria-describedby="emailHelp" required>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label class="floating-label" for="Email">Product Type</label>
+                                        <input type="text" class="form-control" name="ptype" id="Email" aria-describedby="emailHelp" required>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label class="floating-label" for="Email">Gauge</label>
+                                        <input type="text" class="form-control" name="gauge" id="Email" aria-describedby="emailHelp" required>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label class="floating-label" for="Email">Gauge Unit id</label>
+                                        <select class="form-control" name="gunitid">
+                                            {% for unit in unittables %}
+                                            <option value="{{unit.unit_id}}">{{unit.unit_name}}</option>
+                                            {% endfor %}
+                                        </select><br>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label class="floating-label" for="Email">Material Id</label>
+                                        <select class="form-control" name="mid">
+                                            {% for material in material %}
+                                            <option value="{{material.m_id}}">{{material.m_name}}</option>
+                                            {% endfor %}
+                                        </select><br>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label class="floating-label" for="Email">Rate Per mm</label>
+                                        <input type="text" class="form-control" name="rpm" id="Email" aria-describedby="emailHelp" required>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label class="floating-label" for="Email">Product Image</label>
+                                        <input type="file" class="form-control" name="pimage" id="Email" aria-describedby="emailHelp" required>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label class="floating-label" for="Email">Product Description</label>
+                                        <input type="text" class="form-control" name="pdescription" id="Email" aria-describedby="emailHelp" required>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <button type="submit" class="btn  btn-primary">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

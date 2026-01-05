@@ -1,0 +1,56 @@
+{% extends 'main.html' %}
+{% block 'data' %}
+<section class="pcoded-main-container">
+    <div class="pcoded-content">
+        <!-- [ breadcrumb ] start -->
+        <div class="page-header">
+            <div class="page-block">
+                <div class="row align-items-center">
+                    <div class="col-md-12">
+                        <div class="page-header-title">
+                            <h5 class="m-b-10">Master Tables</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- [ breadcrumb ] end -->
+        <!-- [ Main Content ] start -->
+        <div class="row">
+            <!-- [ basic-table ] start -->
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Unit Table</h5>
+                        <span class="d-block m-t-5"><a href="/unitadd/">Add</a></span>
+                    </div>
+                    <div class="card-body table-border-style">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>  
+                                        <th>Unit Id</th>
+                                        <th>Unit Name</th>
+                                        <th>Opration</th>
+                                        <th></th>
+                                    </tr>
+                                    </thead>      
+                                        {% for unit in units %}
+                                         <tr>
+                                            <td>{{unit.unit_id}}</td>
+                                            <td>{{unit.unit_name}}</td>
+                                            <td><a href="/unitdelete/{{unit.unit_id}}/"onclick="return confirm('Do you want to delete?');">Delete</a> <a href="/unitedit/{{unit.unit_id}}/">Edit</a></td></tr>
+                                        {% endfor %}
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <!-- [ Main Content ] end -->
+    </div>
+</section>
+{% endblock %}

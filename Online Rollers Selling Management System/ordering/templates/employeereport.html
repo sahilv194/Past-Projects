@@ -1,0 +1,27 @@
+<h1 align="center">Employee</h1>
+                            <table border="1" width="90%" align="center">
+
+    <thead>
+        <tr>  
+            <th>Employee Id</th>
+            <th>Employee Name</th>
+            <th>Joining Date</th>
+            <th>Emial Id</th>
+            <th>Contact</th>
+            <th>Address</th>
+            <th>City</th>
+        </tr>
+        </thead>      
+            {% for employee in employees %}
+                <tr>
+                    <td>{{employee.e_id}}</td>
+                    <td>{{employee.e_name}}</td>
+                    <td>{{employee.j_date}}</td>
+                    <td>{{employee.e_email_id}}</td>
+                    <td>{{employee.e_contact}}</td>
+                    <td>{{employee.e_address}}</td>
+                    <td>{{employee.e_city}}</td>
+        {% endfor %}
+        
+    </tbody>
+</table>

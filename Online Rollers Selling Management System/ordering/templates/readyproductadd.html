@@ -1,0 +1,76 @@
+{% extends 'main.html' %}
+{% block 'data' %}
+<section class="pcoded-main-container">
+    <div class="pcoded-content">
+        <!-- [ breadcrumb ] start -->
+        <div class="page-header">
+            <div class="page-block">
+                <div class="row align-items-center">
+                    <div class="col-md-12">
+                        <div class="page-header-title">
+                            <h5 class="m-b-10">Master Tables</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- [ breadcrumb ] end -->
+        <!-- [ Main Content ] start -->
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Ready Product Stock Add</h5>
+                    </div>
+                    <div class="card-body">
+                        <form action="/readyproductsave/" method="post">
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label class="floating-label" for="Email">Ready Product Stock id</label>
+                                        <input type="text" class="form-control" name="rpid" id="Email" aria-describedby="emailHelp" required>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label class="floating-label" for="Email">Product Id</label>
+                                        <select class="form-control" name="pid">
+                                            {% for product in producttables %}
+                                            <option value="{{product.p_id}}">{{product.p_name}}</option>
+                                            {% endfor %}
+                                        </select><br>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label class="floating-label" for="Email">Sales Order Detail Id</label>
+                                        <select class="form-control" name="sdid">
+                                            {% for salesorderdetail in salesorderdetailtable %}
+                                            <option value="{{salesorderdetail.sd_id}}">{{salesorderdetail.sd_id}}</option>
+                                            {% endfor %}
+                                        </select><br>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label class="floating-label" for="Email">Quantity</label>
+                                        <input type="text" class="form-control" name="quantity" id="Email" aria-describedby="emailHelp" required>
+                                    </div>
+                                </div>                            
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <button type="submit" class="btn  btn-primary">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,72 @@
+{% extends 'main.html' %}
+{% block 'data' %}
+<section class="pcoded-main-container">
+    <div class="pcoded-content">
+        <!-- [ breadcrumb ] start -->
+        <div class="page-header">
+            <div class="page-block">
+                <div class="row align-items-center">
+                    <div class="col-md-12">
+                        <div class="page-header-title">
+                            <h5 class="m-b-10">Master Tables</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- [ breadcrumb ] end -->
+        <!-- [ Main Content ] start -->
+        <div class="row">
+            <!-- [ basic-table ] start -->
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Product Table</h5>
+                        <span class="d-block m-t-5"><a href="/productadd/">Add</a>
+                        </span>
+                    </div>
+                    <div class="card-body table-border-style">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>  
+                                        <th>Product Id</th>
+                                        <th>Product Name</th>
+                                        <th>Product Type</th>
+                                        <th>Gauge</th>
+                                        <th>Gauge Unit Id</th>
+                                        <th>Material Name</th>
+                                        <th>Rate Per mm</th>
+                                        <th>Product Image</th>
+                                        <th>Product Description</th>
+                                        <th>Opration</th>
+                                    </tr>
+                                    </thead>      
+                                        {% for product in producttables %}
+                                            <tr>
+                                                <td>{{product.p_id}}</td>
+                                                <td>{{product.p_name}}</td>
+                                                <td>{{product.p_type}}</td>
+                                                <td>{{product.gauge}}</td>
+                                                <td>{{product.gauge_u.unit_name}}</td>
+                                                <td>{{product.m.m_name}}</td>
+                                                <td>{{product.rate_per_mm}}</td>
+                                                <td><img src="{{product.p_image}}" width="100px"></td>
+                                                <td>{{product.p_description}}</td><td><a href="/productdelete/{{product.p_id}}"onclick="return confirm('Do you want to delete?');">Delete <a href="/productedit/{{product.p_id}}">Edit</a></td></tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+
+
+        
+        <!-- [ Main Content ] end -->
+    </div>
+</section>
+{% endblock %}

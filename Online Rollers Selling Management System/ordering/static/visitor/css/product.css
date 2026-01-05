@@ -1,0 +1,135 @@
+/*
+Template Name:Shopping store
+File: Layout CSS
+Author: Templates On Web
+Author URI: http://templateonweb.com/
+Licence: <a href="http://www.templateonweb.com/terms.php?v=content&contentid=152">Website Template Licence</a>
+*/
+/*********************product****************/
+.center_product{
+  padding-top:20px;
+  padding-bottom:10px;
+  }
+.center_product_1{
+  margin-left:15px;
+  margin-right:15px;
+  }
+.center_product_1 ul li{
+display:inline-block;
+margin-right:10px;
+font-size:14px;
+  }
+.center_product_1 ul li a{
+  color:#333;
+  }
+.center_product_1 ul li a:hover{
+  color:#ff5c00;
+  }
+.center_product_1 ul li i{
+  margin-left:10px;
+  }
+  
+.product_page_right_1_left .label_1{
+  margin-right:5px;
+  font-size:16px;
+  font-weight:100;
+  }
+.product_page_right_1_left .form_1{
+  width:200px;
+  height:40px;
+  font-size:16px;
+  border-color:#f3f7c0;
+  }
+.product_page_right_1_left ul{
+display:inline; 
+margin-left:20px;
+  }
+.product_page_right_1_left ul li{
+display:inline-block;
+padding-left:2px;
+padding-right:2px;
+  }
+.product_page_right_1_left .tag_page{
+ color:#ff5c00; 
+  }
+.product_page_right_1_left ul li a{
+color:#5a5c3f;
+  }
+.product_page_right_1_left ul li a:hover{
+color:#ff5c00;
+  }
+
+.product_page_right_1{
+border-bottom:1px solid #f3f7c0;
+padding-top:10px; 
+padding-bottom:10px; 
+margin-top:15px;
+margin-bottom:20px; 
+background: #f3f7c052;
+  }
+.center_product .sale_1_left_1{
+margin-bottom:30px;  
+  }
+  
+.product_page_right_1_middle .form-control{
+  box-shadow:none;
+  border-radius:0;
+  height:47px;
+  border-color:#f3f7c0;
+  }
+.product_page_right_1_middle .btn{
+padding:10.5px 30px;
+background:#5a5c3f;
+border:none;
+border-radius:0;
+font-size:18px;
+  }
+.product_page_right_1_middle .input-group-btn:last-child>.btn, .input-group-btn:last-child>.btn-group{
+ margin-left:0; 
+  }
+.product_page_right_1_middle .btn:hover{
+background:#ff5c00;
+  }
+.product_page_right_1_left  .form_2{
+border-color:#f3f7c0; 
+ }
+  
+.product_page_right_1_left {
+padding-top:5px; 
+ }
+.product_page_right_1_left_o {
+padding-top:15px; 
+ }
+/*********************product_end****************/
+
+@media screen and (max-width : 767px){
+.product_page_right_1_middle  {
+  margin-top:15px;
+  margin-bottom:15px;
+  }
+.product_page_right_1_left {
+text-align:left; 
+ }
+}
+
+@media (min-width:768px) and (max-width:991px) {
+.product_page_right_1_left ul li{
+font-size:14px;
+padding:0;
+  }
+.product_page_right_1_left .form_1{
+ width:auto; 
+  }
+.sale_1_left_1_inner img{
+  height:200px;
+  }
+ }
+ @media (min-width:992px) and (max-width:1200px) {
+
+ }
+@media (min-width:1201px) and (max-width:1335px) {
+
+ }
+
+
+

@@ -1,0 +1,62 @@
+{% extends 'main.html' %}
+{% block 'data' %}
+<section class="pcoded-main-container">
+    <div class="pcoded-content">
+        <!-- [ breadcrumb ] start -->
+        <div class="page-header">
+            <div class="page-block">
+                <div class="row align-items-center">
+                    <div class="col-md-12">
+                        <div class="page-header-title">
+                            <h5 class="m-b-10">Transactions Tables</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- [ breadcrumb ] end -->
+        <!-- [ Main Content ] start -->
+        <div class="row">
+            <!-- [ basic-table ] start -->
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Payment Table</h5>
+                        <span class="d-block m-t-5"><a href="/paymentadd/">Add</a>
+                        </span>
+                    </div>
+                    <div class="card-body table-border-style">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>  
+                                        <th>Payment Id</th>
+                                        <th>Purchase Order Id</th>
+                                        <th>Payment Date</th>
+                                        <th>Amount</th>
+                                        <th>Payment Mode</th>
+                                        <th>Transaction No</th>
+                                        <th>Opration</th>
+                                    </tr>
+                                    </thead>      
+                                        {% for payment in paynmenttables %}
+                                            <tr>
+                                                <td>{{payment.py_id}}</td>
+                                                <td>{{payment.po_id}}</td>
+                                                <td>{{payment.py_date}}</td>
+                                                <td>{{payment.amount}}</td>
+                                                <td>{{payment.p_mode}}</td>
+                                                <td>{{payment.transaction_no}}</td><td><a href="/paymentdelete/{{payment.py_id}}"onclick="return confirm('Do you want to delete?');">Delete <a href="/paymentedit/{{payment.py_id}}">Edit</a></td></tr>
+                                        {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <!-- [ Main Content ] end -->
+    </div>
+</section>
+{% endblock %}

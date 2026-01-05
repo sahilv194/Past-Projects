@@ -1,0 +1,84 @@
+{% extends 'main.html' %}
+{% block 'data' %}
+<section class="pcoded-main-container">
+    <div class="pcoded-content">
+        <!-- [ breadcrumb ] start -->
+        <div class="page-header">
+            <div class="page-block">
+                <div class="row align-items-center">
+                    <div class="col-md-12">
+                        <div class="page-header-title">
+                            <h5 class="m-b-10">Transactions Tables</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- [ breadcrumb ] end -->
+        <!-- [ Main Content ] start -->
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Receipt Add</h5>
+                    </div>
+                    <div class="card-body">
+                        <form action="/receiptsave/" method="post">
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label class="floating-label" for="Email">Receipt Id</label>
+                                        <input type="text" class="form-control" name="rid" id="Email" aria-describedby="emailHelp" required>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label class="floating-label" for="Email">Sales Order Id</label>
+                                        <select class="form-control" name="soid">
+                                            {% for salesorder in salesordertables %}
+                                            <option value="{{salesorder.so_id}}">{{salesorder.so_id}}</option>
+                                            {% endfor %}
+                                        </select><br>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label class="floating-label" for="Email">Receipt Date</label>
+                                        <input type="text" class="form-control" name="rdate" id="Email" aria-describedby="emailHelp" required>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label class="floating-label" for="Email">Amount</label>
+                                        <input type="text" class="form-control" name="amount" id="Email" aria-describedby="emailHelp" required>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label class="floating-label" for="Email">Payment Mode</label>
+                                        <input type="text" class="form-control" name="mode" id="Email" aria-describedby="emailHelp" required>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label class="floating-label" for="Email">Transcation No</label>
+                                        <input type="text" class="form-control" name="tno" id="Email" aria-describedby="emailHelp" required>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <button type="submit" class="btn  btn-primary">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

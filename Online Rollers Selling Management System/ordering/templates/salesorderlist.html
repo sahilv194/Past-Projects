@@ -1,0 +1,107 @@
+{% extends 'main.html' %}
+{% block 'data' %}
+<section class="pcoded-main-container">
+    <div class="pcoded-content">
+        <!-- [ breadcrumb ] start -->
+        <div class="page-header">
+            <div class="page-block">
+                <div class="row align-items-center">
+                    <div class="col-md-12">
+                        <div class="page-header-title">
+                            <h5 class="m-b-10">Transactions Tables</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- [ breadcrumb ] end -->
+        <!-- [ Main Content ] start -->
+        <div class="row">
+            <!-- [ basic-table ] start -->
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Sales Order Table</h5>
+                        <span class="d-block m-t-5">
+                        </span>
+                    </div>
+                    <div class="card-body table-border-style">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>  
+                                        <th>Sales Order Id</th>
+                                        <th>Customer Id</th>
+                                        <th>Sales Order Date</th>
+                                        <th>Sales Order Total</th>
+                                        <th>Detail</th>
+                                        <th>Opration</th>
+                                    </tr>
+                                    </thead>      
+                                        {% for salesorder in salesorders %}
+                                            <tr>
+                                                <td>{{salesorder.so_id}}</td>
+                                                <td>{{salesorder.cust_id}}</td>
+                                                <td>{{salesorder.sales_date}}</td>
+                                                <td>{{salesorder.total}}</td><td><a href="/salesorderlistd/{{salesorder.so_id}}">Details </a></td><td><a href="/salesorderedit/{{salesorder.so_id}}">Edit</a></td></tr>
+                                        {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+
+
+        <div class="row">
+            <!-- [ basic-table ] start -->
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Sales Order Detail Table</h5>
+                        <span class="d-block m-t-5"><a href="/salesorderdetailadd/">Add</a>
+                        </span>
+                    </div>
+                    <div class="card-body table-border-style">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>  
+                                        <th>Sales Order Detail Id</th>
+                                        <th>Sales Order Id</th>
+                                        <th>Product Id</th>
+                                        <th>Length</th>
+                                        <th>Diameter</th>
+                                        <th>Quantity</th>
+                                        <th>Rate</th>
+                                        <th>Image</th>
+                                        <th>Opration</th>
+                                    </tr>
+                                    </thead>      
+                                        {% for salesorderdetail in salesorderdetailtables %}
+                                            <tr>
+                                                <td>{{salesorderdetail.sd_id}}</td>
+                                                <td>{{salesorderdetail.so_id}}</td>
+                                                <td>{{salesorderdetail.p_id}}</td>
+                                                <td>{{salesorderdetail.length}}</td>
+                                                <td>{{salesorderdetail.diameter}}</td>
+                                                <td>{{salesorderdetail.quantity}}</td>
+                                                <td>{{salesorderdetail.rate}}</td>
+                                                <td><img src="{{salesorderdetail.image}}" width="100px"></td><td><a href="/salesorderdetailedit/{{salesorderdetail.sd_id}}">Edit</a></td></tr>
+                                        {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+        <!-- [ Main Content ] end -->
+    </div>
+</section>
+{% endblock %}

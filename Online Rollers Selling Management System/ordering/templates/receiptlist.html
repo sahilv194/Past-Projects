@@ -1,0 +1,63 @@
+{% extends 'main.html' %}
+{% block 'data' %}
+<section class="pcoded-main-container">
+    <div class="pcoded-content">
+        <!-- [ breadcrumb ] start -->
+        <div class="page-header">
+            <div class="page-block">
+                <div class="row align-items-center">
+                    <div class="col-md-12">
+                        <div class="page-header-title">
+                            <h5 class="m-b-10">Transactions Tables</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- [ breadcrumb ] end -->
+        <!-- [ Main Content ] start -->
+        <div class="row">
+            <!-- [ basic-table ] start -->
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Receipt Table</h5>
+                        <span class="d-block m-t-5"><a href="/receiptadd/">Add</a>
+                        </span>
+                    </div>
+                    <div class="card-body table-border-style">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>  
+                                        <th>Receipt Id</th>
+                                        <th>Sales Order Id</th>
+                                        <th>Receipt Date</th>
+                                        <th>Amount</th>
+                                        <th>Payment Mode</th>
+                                        <th>Transaction No</th>
+                                        <th>Opration</th>
+                                    </tr>
+                                    </thead>      
+                                        {% for receipt in receipttables %}
+                                            <tr>
+                                                <td>{{receipt.r_id}}</td>
+                                                <td>{{receipt.so_id}}</td>
+                                                <td>{{receipt.r_date}}</td>
+                                                <td>{{receipt.amount}}</td>
+                                                <td>{{receipt.mode}}</td>
+                                                <td>{{receipt.transaction_no}}</td><td><a href="/receiptedit/{{receipt.r_id}}">Edit</a></td></tr>
+                                        {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <!-- [ Main Content ] end -->
+    </div>
+</section>
+{% endblock %}
+

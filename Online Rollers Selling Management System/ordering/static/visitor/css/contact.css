@@ -1,0 +1,90 @@
+/*
+Template Name:Shopping store
+File: Layout CSS
+Author: Templates On Web
+Author URI: http://templateonweb.com/
+Licence: <a href="http://www.templateonweb.com/terms.php?v=content&contentid=152">Website Template Licence</a>
+*/
+/*********************contact****************/
+.center_contact{
+  padding-top:20px;
+  padding-bottom:20px;
+  }
+.center_product_1 h1 {
+    font-weight: bold;
+	margin-top:0;
+	margin-bottom:20px;
+}
+#contact{
+padding-top:10px;
+padding-bottom:20px;
+padding-left:20px;
+padding-right:20px; 
+ }
+.checkout_1l1 .form-control {
+    border-color:#f3f7c0;
+	box-shadow:none;
+    height: 50px;
+    margin-top: 15px;
+    border-radius: 0;
+    font-size: 16px;
+	margin-bottom:15px;
+}
+.checkout_1l1 .form_1 {
+height:180px;
+}
+.contact_1lm{
+box-shadow: 0 0 10px #f3f7c0;
+padding:40px 20px; 
+background: #f3f7c052;
+ }
+.contact_1r1 span{
+display:inline-block;
+background:#ff5c00;
+color:#fff;
+width:45px;
+height:45px;
+line-height:45px;
+border-radius:3px;
+text-align:center;
+font-size:18px; 
+ }
+.contact_1rm{
+box-shadow: 0 0 10px #f3f7c0;
+background: #f3f7c052;
+padding:40px 20px; 
+ }
+.contact_1r1{
+margin-top:30px; 
+ }
+.contact_2{
+margin-top:30px; 
+ }
+/*********************contact_end****************/
+
+@media screen and (max-width : 767px){
+#contact{
+text-align:center; 
+ }
+.checkout_1l1 {
+margin-top:15px; 
+ }
+.contact_1rm {
+margin-top:15px;  
+ }
+}
+
+@media (min-width:768px) and (max-width:991px) {
+.checkout_1l1 {
+margin-top:15px; 
+ }
+ }
+ @media (min-width:992px) and (max-width:1200px) {
+
+ }
+@media (min-width:1201px) and (max-width:1335px) {
+
+ }
+
+
+

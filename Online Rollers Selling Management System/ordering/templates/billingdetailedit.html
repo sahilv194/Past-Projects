@@ -1,0 +1,91 @@
+{% extends 'main.html' %}
+{% block 'data' %}
+<section class="pcoded-main-container">
+    <div class="pcoded-content">
+        <!-- [ breadcrumb ] start -->
+        <div class="page-header">
+            <div class="page-block">
+                <div class="row align-items-center">
+                    <div class="col-md-12">
+                        <div class="page-header-title">
+                            <h5 class="m-b-10">Transactions Tables</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- [ breadcrumb ] end -->
+        <!-- [ Main Content ] start -->
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Billing Detail Edit</h5>
+                    </div>
+                    <div class="card-body">
+                        <form action="/billingdetailupdate/{{billingdetail.bill_d_id}}/" method="post">
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label class="floating-label" for="Email">Billing Detail Id</label>
+                                        <input type="text" class="form-control" name="bdid" id="Email" aria-describedby="emailHelp" value="{{billingdetail.bill_d_id}}" required>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label class="floating-label" for="Email">Bill Id</label>
+                                        <select class="form-control" name="bid">
+                                            {% for bill in billingtables %}
+                                            <option value="{{bill.bill_id}}">{{bill.bill_id}}</option>
+                                            {% endfor %}
+                                        </select><br>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label class="floating-label" for="Email">Product Id</label>
+                                        <select class="form-control" name="pid">
+                                            {% for product in producttable %}
+                                            <option value="{{product.p_id}}">{{product.p_name}}</option>
+                                            {% endfor %}
+                                        </select><br>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label class="floating-label" for="Email">Description</label>
+                                        <input type="text" class="form-control" name="ddescription" id="Email" aria-describedby="emailHelp" value="{{billingdetail.description}}" required>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label class="floating-label" for="Email">Quantity</label>
+                                        <input type="text" class="form-control" name="quantity" id="Email" aria-describedby="emailHelp" value="{{billingdetail.quantity}}" required>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label class="floating-label" for="Email">Rate</label>
+                                        <input type="text" class="form-control" name="rate" id="Email" aria-describedby="emailHelp" value="{{billingdetail.rate}}" required>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <button type="submit" class="btn  btn-primary">Update</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+
+
+

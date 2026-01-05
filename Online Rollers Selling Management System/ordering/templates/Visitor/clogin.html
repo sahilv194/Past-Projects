@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Shopping store</title>
+	<link href="{% static 'visitor/css/bootstrap.min.css' %}" rel="stylesheet">
+	<link href="{% static 'visitor/css/global.css' %}" rel="stylesheet">
+	<link href="{% static 'visitor/css/product.css' %}" rel="stylesheet">
+	<link href="{% static 'visitor/css/account.css' %}" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="{% static 'visitor/css/font-awesome.min.css' %}" />
+	<link href="https://fonts.googleapis.com/css?family=Farro&display=swap" rel="stylesheet">
+	<script src="{% static 'visitor/js/jquery-2.1.1.min.js' %}"></script>
+	<script src="{% static 'visitor/js/bootstrap.min.js' %}"></script>
+  </head>
+  
+<body>
+<section id="header_top" class="clearfix">
+ <div class="container-fluid">
+  <div class="row">
+   <div class="header_top_1 clearfix">
+    <div class="col-sm-4">
+	 <div class="header_top_1_inner clearfix">
+	 </div>
+	</div>
+	<div class="col-sm-8">
+	 <div class="header_top_1_inner clearfix">
+	   <ul class="nav_1 navbar-right">
+                    <li class="tag_1">
+					 <i class="fa fa-lock"></i>
+					<a class="tag_menu" href="/clogin/">Login</a> or
+					<a class="tag_menu" href="/registration/">Register</a> 
+					</li>
+       </ul>
+	 </div>
+	</div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="header_middle" class="clearfix">
+ <div class="container-fluid">
+  <div class="row">
+   <div class="header_middle_1 clearfix">
+    <div class="col-sm-3">
+	 <div class="header_middle_1_left clearfix">
+	   <h3><a href="index.html"><img src="../../static/visitor/img/logo.png" width="55"></i> Mahaklali <span>Engineering Works</span></a></h3>
+	 </div>
+	</div>
+	<div class="col-sm-7">
+	</div>
+	<div class="col-sm-2">
+	</div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="header_main" class="clearfix">
+	<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header page-scroll">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>					</button>
+				<a class="navbar-brand" href="index.html"><i class="fa fa-shopping-cart"></i> ONLINE <span>Shopping store</span></a>				</div>
+	
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+					    <li>
+							<a class="menu_tab active_tag" href="account.html">SIGN IN</a></li>
+							
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+					  <li class="menu_tab_2"><i class="fa fa-phone-square"></i> Phone (+91)74330 91598</li>
+					</ul>
+				</div>
+				<!-- /.navbar-collapse -->
+			</div>
+			<!-- /.container-fluid -->
+		</nav>
+</section>
+
+<section id="center" class="center_account clearfix">
+ <div class="container-fluid">
+  <div class="row">
+   <div class="col-sm-12">
+         <div class="center_account_1 clearfix">
+            <form method="post" action="/clogin/">
+                {% csrf_token %}
+                <div class="col-sm-3"></div>
+		  
+                <div class="col-sm-6">
+					<div class="center_account_1 clearfix">
+						<div class="col-sm-6">
+						 <div class="center_account_1_left clearfix">
+						  <h3>SIGN IN</h3>
+						  <p>Email address    <span>*</span></p>
+						  <input class="form-control" type="text" name="cemailid">
+						  <p>Password  <span>*</span></p>
+						  <input class="form-control" type="password" name="cpassword">
+						  <h5>Social network:</h5>
+							<ul class="social-network social-circle">
+									  <li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+									  <li><a href="#" class="icoInstagram" title="Instagram"><i class="fa fa-instagram"></i></a></li>
+						   </ul> 
+						   <h5><input type="submit" class="button" value="SIGN IN">
+							</h5>
+							<h2><a href="#">Forgot your password?</a></h2>
+						 </div>
+						</div>
+					   </div>
+		  </div>
+            </form>
+		 </div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="footer">
+ <div class="container-fluid">
+  <div class="row">
+   <div class="col-sm-12">
+     <div class="footer_1 clearfix">
+	  <div class="col-sm-3">
+	   <div class="footer_1_inner clearfix">
+	     <h3><a href="index.html"><img src="../../static/visitor/img/logo.png" width="55"></i> Mahaklali <span>Engineering Works</span></a></h3>
+		 <ul>
+		   <li><i class="fa fa-home"></i> 186,Vijay Industrial Estate,Centaral Workshop Road,B/h.Bhikshukgruh,Odhav,Ahmedabad-382515.</li>
+		   <li><i class="fa fa-paper-plane"></i> <a href="#">lp@gmail.com</a></li>
+		   <li><i class="fa fa-phone"></i> (+XY) 74330 91598</li>
+		   <li><i class="fa fa-clock-o"></i> Mon - Sat / 11:00AM</li>
+		 </ul>
+	   </div>
+	  </div>
+	  <div class="col-sm-3">
+	   <div class="footer_1_inner clearfix">
+	     <h4>HELP & SUPPORT</h4>
+		 <hr>
+		 <ul class="footer_tab">
+		   <li> <a href="/aboutus/"><i class="fa fa-dot-circle-o"></i> About Us</a></li>
+		   <li> <a href="#"><i class="fa fa-dot-circle-o"></i> Connect Us</a></li>
+		   <li> <a href="#"><i class="fa fa-dot-circle-o"></i> Our Location</a></li>
+		 </ul>
+	   </div>
+	  </div>
+	 </div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<div id="toTop" class="btn btn-info" style="display: block; background:#5a5c3f; color:#fff; border:none;"><span class="fa fa-chevron-up"></span></div>
+
+<script>
+$(document).ready(function(){
+  $('body').append('<div id="toTop" class="btn btn-info"><span class="glyphicon glyphicon-chevron-up"></span> Back to Top</div>');
+	$(window).scroll(function () {
+		if ($(this).scrollTop() != 0) {
+			$('#toTop').fadeIn();
+		} else {
+			$('#toTop').fadeOut();
+		}
+	}); 
+$('#toTop').click(function(){
+	$("html, body").animate({ scrollTop: 0 }, 600);
+	return false;
+});
+});
+
+</script>
+
+</body>
+ 
+
+</html>

@@ -1,0 +1,65 @@
+{% extends 'main.html' %}
+{% block 'data' %}
+<section class="pcoded-main-container">
+    <div class="pcoded-content">
+        <!-- [ breadcrumb ] start -->
+        <div class="page-header">
+            <div class="page-block">
+                <div class="row align-items-center">
+                    <div class="col-md-12">
+                        <div class="page-header-title">
+                            <h5 class="m-b-10">Master Tables</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- [ breadcrumb ] end -->
+        <!-- [ Main Content ] start -->
+        <div class="row">
+            <!-- [ basic-table ] start -->
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Customer Table</h5><a  href="/customerreport/">Report</a>
+                        <span class="d-block m-t-5">
+                        </span>
+                    </div>
+                    <div class="card-body table-border-style">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>  
+                                        <th>Customer Id</th>
+                                        <th>Customer Name</th>
+                                        <th>Address</th>
+                                        <th>Contact</th>
+                                        <th>Password</th>
+                                        <th>Emial Id</th>
+                                        <th>Area Name</th>
+                                        <th>Opration</th>
+                                    </tr>
+                                    </thead>      
+                                        {% for customer in customers %}
+                                            <tr>
+                                                <td>{{customer.cust_id}}</td>
+                                                <td>{{customer.customer_name}}</td>
+                                                <td>{{customer.customer_address}}</td>
+                                                <td>{{customer.contact_no_field}}</td>
+                                                <td>{{customer.password}}</td>
+                                                <td>{{customer.email_id}}</td>
+                                                <td>{{customer.pincode}}</td><td><a href="/customeredit/{{customer.cust_id}}/">Edit</a></td></tr>
+                                    {% endfor %}
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <!-- [ Main Content ] end -->
+    </div>
+</section>
+{% endblock %}

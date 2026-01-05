@@ -1,0 +1,58 @@
+{% extends 'main.html' %}
+{% block 'data' %}
+<section class="pcoded-main-container">
+    <div class="pcoded-content">
+        <!-- [ breadcrumb ] start -->
+        <div class="page-header">
+            <div class="page-block">
+                <div class="row align-items-center">
+                    <div class="col-md-12">
+                        <div class="page-header-title">
+                            <h5 class="m-b-10">Master Tables</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- [ breadcrumb ] end -->
+        <!-- [ Main Content ] start -->
+        <div class="row">
+            <!-- [ basic-table ] start -->
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Admin Table</h5>
+                        <span class="d-block m-t-5"></span>
+                    </div>
+                    <div class="card-body table-border-style">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>  
+                                        <th>Admin Id</th>
+                                        <th>Admin Name</th>
+                                        <th>Email Id</th>
+                                        <th>Password</th>
+                                        <th>Opration</th>
+                                    </tr>
+                                    </thead>      
+                                    {% for admin in admins %}
+                                    <tr>
+                                        <td>{{admin.admin_id}}</td>
+                                        <td>{{admin.admin_name}}</td>
+                                        <td>{{admin.email_id}}</td>
+                                        <td>{{admin.password}}</td><td><a href="/adminedit/{{admin.admin_id}}/">Edit</a></td></tr>
+                                    {% endfor %}
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <!-- [ Main Content ] end -->
+    </div>
+</section>
+{% endblock %}

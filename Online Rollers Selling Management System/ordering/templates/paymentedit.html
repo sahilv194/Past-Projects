@@ -1,0 +1,85 @@
+{% extends 'main.html' %}
+{% block 'data' %}
+<section class="pcoded-main-container">
+    <div class="pcoded-content">
+        <!-- [ breadcrumb ] start -->
+        <div class="page-header">
+            <div class="page-block">
+                <div class="row align-items-center">
+                    <div class="col-md-12">
+                        <div class="page-header-title">
+                            <h5 class="m-b-10">Transactions Tables</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- [ breadcrumb ] end -->
+        <!-- [ Main Content ] start -->
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Payment Edit</h5>
+                    </div>
+                    <div class="card-body">
+                        <form action="/paymentupdate/{{payment.py_id}}/" method="post">
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label class="floating-label" for="Email">Payment Id</label>
+                                        <input type="text" class="form-control" name="pyid" id="Email" aria-describedby="emailHelp" value="{{payment.py_id}}" required>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label class="floating-label" for="Email">Purchase Order Id</label>
+                                        <select class="form-control" name="poid">
+                                            {% for purchaseorder in purchaseordertables %}
+                                            <option value="{{purchaseorder.po_id}}">{{purchaseorder.po_id}}</option>
+                                            {% endfor %}
+                                        </select><br>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label class="floating-label" for="Email">Payment Date</label>
+                                        <input type="text" class="form-control" name="pydate" id="Email" aria-describedby="emailHelp" value="{{payment.py_date}}" required>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label class="floating-label" for="Email">Payment Amount</label>
+                                        <input type="text" class="form-control" name="amount" id="Email" aria-describedby="emailHelp" value="{{payment.amount}}" required>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label class="floating-label" for="Email">Payment Mode</label>
+                                        <input type="text" class="form-control" name="pymode" id="Email" aria-describedby="emailHelp" value="{{payment.py_mode}}" required>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label class="floating-label" for="Email">Transaction No</label>
+                                        <input type="text" class="form-control" name="tno" id="Email" aria-describedby="emailHelp" value="{{payment.transaction_no}}" required>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <button type="submit" class="btn  btn-primary">Update</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+

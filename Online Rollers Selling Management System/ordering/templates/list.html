@@ -1,0 +1,54 @@
+{% extends 'main.html' %}
+{% block 'data' %}
+<section class="pcoded-main-container">
+    <div class="pcoded-content">
+        <!-- [ breadcrumb ] start -->
+        <div class="page-header">
+            <div class="page-block">
+                <div class="row align-items-center">
+                    <div class="col-md-12">
+                        <div class="page-header-title">
+                            <h5 class="m-b-10">Master Tables</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- [ breadcrumb ] end -->
+        <!-- [ Main Content ] start -->
+        <div class="row">
+            <!-- [ basic-table ] start -->
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>State Table</h5><a  href="/listreport/">Report</a>
+                        <span class="d-block m-t-5"><a href="/stateadd/"onclick="return confirm('Do you want to Add?');">Add</a></span>
+                    </div>
+                    <div class="card-body table-border-style">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>  
+                                        <th>State Id</th>
+                                        <th>State Name</th>                                    
+                                        <th>Opration</th>
+                                    </tr>
+                                    </thead>      
+                                        {% for state in states %}
+                                            <tr>
+                                                <td>{{state.state_id}}</td>
+                                                <td>{{state.state_name}}</td><td><a href="/statedelete/{{state.state_id}}/" onclick="return confirm('Do you want to delete?');">Delete <a href="/stateedit/{{state.state_id}}/">Edit</a></td></tr>
+                                        {% endfor%}
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <!-- [ Main Content ] end -->
+    </div>
+</section>
+{% endblock %}

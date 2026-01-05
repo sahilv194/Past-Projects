@@ -1,0 +1,73 @@
+{% extends 'main.html' %}
+{% block 'data' %}
+<section class="pcoded-main-container">
+    <div class="pcoded-content">
+        <!-- [ breadcrumb ] start -->
+        <div class="page-header">
+            <div class="page-block">
+                <div class="row align-items-center">
+                    <div class="col-md-12">
+                        <div class="page-header-title">
+                            <h5 class="m-b-10">Transactions Tables</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- [ breadcrumb ] end -->
+        <!-- [ Main Content ] start -->
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Purchase Order Edit</h5>
+                    </div>
+                    <div class="card-body">
+                        <form action="/purchaseorderupdate/{{purchaseorder.po_id}}/" method="post">
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label class="floating-label" for="Email">Purchase Order Id</label>
+                                        <input type="text" class="form-control" name="poid" id="Email" aria-describedby="emailHelp" value="{{purchaseorder.po_id}}" required>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label class="floating-label" for="Email">Supplier Id</label>
+                                        <select class="form-control" name="sid">
+                                            {% for supplier in suppliers %}
+                                            <option value="{{supplier.supplier_id}}">{{supplier.supplier_name}}</option>
+                                            {% endfor %}
+                                        </select><br>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label class="floating-label" for="Email">Purchase Order Date</label>
+                                        <input type="text" class="form-control" name="podate" id="Email" aria-describedby="emailHelp" value="{{purchaseorder.po_date}}" required>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label class="floating-label" for="Email">Purchase Order Total</label>
+                                        <input type="text" class="form-control" name="pototal" id="Email" aria-describedby="emailHelp" value="{{purchaseorder.po_total}}" required>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <button type="submit" class="btn  btn-primary">Update</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+

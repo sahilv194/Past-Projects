@@ -1,0 +1,107 @@
+/*
+Template Name:Shopping store
+File: Layout CSS
+Author: Templates On Web
+Author URI: http://templateonweb.com/
+Licence: <a href="http://www.templateonweb.com/terms.php?v=content&contentid=152">Website Template Licence</a>
+*/
+/*********************blog****************/
+.center_blog{
+ padding-top: 20px;
+ padding-bottom: 10px;
+  }
+.center_product_1 h1{
+  font-weight:bold;
+  margin-top:20px;
+  }
+.center_blog_1{
+margin-top:20px;  
+  }
+.center_blog_1_inner {
+border:1px solid #f3f7c0;
+padding:10px;
+background:#f3f7c052;
+ }
+.center_blog_1_inner p{
+  font-weight:bold;
+  margin-top:15px;
+  font-size:22px;
+  }
+.center_blog_1_inner p a{
+  color:#5a5c3f;
+  }
+.center_blog_1_inner p a:hover{
+  color:#ff5c00;
+  }
+.center_blog_1_inner ul{
+  margin-top:10px;
+  }
+.center_blog_1_inner ul li{
+display:inline-block;
+padding-right:10px;
+font-size:14px;
+margin-bottom:5px;
+color:#666;
+  }
+.center_blog_1_inner ul li i{
+color:#ff5c00;
+  }
+.center_blog_1_inner ul li a{
+color:#666;  
+  }
+.center_blog_1_inner ul li a:hover{
+color:#ff5c00;
+  }
+.center_blog_1_inner h5{
+margin-top:10px;
+font-weight:bold;
+font-size:16px;
+text-align:right;
+  }
+.center_blog_1_inner h5 a{
+  color:#ff5c00;
+  }
+.center_blog_1_inner h5 a:hover{
+  color:#5a5c3f;
+  }
+.center_blog_2{
+margin-top:40px;  
+  }
+.center_blog_2 ul li a{
+color:#5a5c3f!important; 
+border-color:#f3f7c0;
+  }
+.center_blog_2 ul li a:hover{
+  background:#ff5c00;
+  border-color:#ff5c00;
+  color:#fff!important;
+  }
+.pagination>.active>a, .pagination>.active>span, .pagination>.active>a:hover, .pagination>.active>span:hover, .pagination>.active>a:focus, .pagination>.active>span:focus{
+  background:#ff5c00;
+  border-color:#ff5c00;
+  color:#fff!important;
+  }
+
+/*********************blog_end****************/
+
+@media screen and (max-width : 767px){
+.center_blog_1_inner {
+ margin-top:10px;
+   }
+.center_blog_2 {
+  margin-top:20px;
+  }
+}
+
+@media (min-width:768px) and (max-width:991px) {
+
+ }
+ @media (min-width:992px) and (max-width:1200px) {
+
+ }
+@media (min-width:1201px) and (max-width:1335px) {
+
+ }
+
+
+

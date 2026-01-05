@@ -1,0 +1,101 @@
+{% extends 'main.html' %}
+{% block 'data' %}
+<section class="pcoded-main-container">
+    <div class="pcoded-content">
+        <!-- [ breadcrumb ] start -->
+        <div class="page-header">
+            <div class="page-block">
+                <div class="row align-items-center">
+                    <div class="col-md-12">
+                        <div class="page-header-title">
+                            <h5 class="m-b-10">Transactions Tables</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- [ breadcrumb ] end -->
+        <!-- [ Main Content ] start -->
+        <div class="row">
+            <!-- [ basic-table ] start -->
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Purchase Order Table</h5>
+                        <span class="d-block m-t-5"><a href="/purchaseorderadd/">Add</a>
+                        </span>
+                    </div>
+                    <div class="card-body table-border-style">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>  
+                                        <th>Purchase Order Id</th>
+                                        <th>Supplier Id</th>
+                                        <th>Purchase Order Date</th>
+                                        <th>Purchase Order Total</th>
+                                        <th>Detail</th>
+                                        <th>Opration</th>
+                                    </tr>
+                                    </thead>      
+                                        {% for purchaseorder in purchaseorders %}
+                                            <tr>
+                                                <td>{{purchaseorder.po_id}}</td>
+                                                <td>{{purchaseorder.supplier_id}}</td>
+                                                <td>{{purchaseorder.po_date}}</td>
+                                                <td>{{purchaseorder.po_total}}</td><td><a href="/purchaseorderlistd/{{purchaseorder.po_id}}">Details </a></td><td><a href="/purchaseorderdelete/{{purchaseorder.po_id}}"onclick="return confirm('Do you want to delete?');">Delete <a href="/purchaseorderedit/{{purchaseorder.po_id}}">Edit</a></td></tr>
+                                        {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Purchase Order Detail Table</h5>
+                        <span class="d-block m-t-5"><a href="/purchaseorderdetailadd/">Add</a>
+                        </span>
+                    </div>
+                    <div class="card-body table-border-style">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>  
+                                        <th>Purchase Order Detail Id</th>
+                                        <th>Purchase Order Id</th>
+                                        <th>Product Id</th>
+                                        <th>Length</th>
+                                        <th>Length Unit Id</th>
+                                        <th>Quantity</th>
+                                        <th>Rate</th>
+                                        <th>Opration</th>
+                                    </tr>
+                                    </thead>      
+                                        {% for purchaseorderdetail in purchaseorderdetailtables %}
+                                            <tr>
+                                                <td>{{purchaseorderdetail.pd_id}}</td>
+                                                <td>{{purchaseorderdetail.po_id}}</td>
+                                                <td>{{purchaseorderdetail.p_id}}</td>
+                                                <td>{{purchaseorderdetail.length}}</td>
+                                                <td>{{purchaseorderdetail.lengthu_id}}</td>
+                                                <td>{{purchaseorderdetail.quantity}}</td>
+                                                <td>{{purchaseorderdetail.rate}}</td><td><a href="/purchaseorderdetaildelete/{{purchaseorderdetail.pd_id}}">Delete <a href="/purchaseorderdetailedit/{{purchaseorderdetail.pd_id}}">Edit</a></td></tr>
+                                        {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
+            
+        </div>
+
+        
+        <!-- [ Main Content ] end -->
+    </div>
+</section>
+{% endblock %}

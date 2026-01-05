@@ -1,0 +1,19 @@
+<h1 align="center">Material Stock</h1>
+                            <table border="1" width="70%" align="center">
+    <thead>
+        <tr>  
+            <th>Stock Id</th>
+            <th>Product Name</th>
+            <th>Transaction Type</th>
+            <th>Transaction Date&Time</th>
+        </tr>
+        </thead>      
+            {% for materialstock in materialstocktables %}
+                <tr>
+                    <td>{{materialstock.stock_id}}</td>
+                    <td>{{materialstock.p.p_name}}</td>
+                    <td>{{materialstock.transaction_type}}</td>
+                    <td>{{materialstock.t_datetime}}</td>
+            {% endfor %}
+    </tbody>
+</table>
